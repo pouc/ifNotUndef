@@ -1,7 +1,7 @@
 <a name="module_ifnotundef"></a>
 
 ## ifnotundef
-A set of helper functions that simplify the (is a undefined ? b : c) syntax
+[![Coverage Status](https://coveralls.io/repos/github/pouc/ifnotundef/badge.svg?branch=master)](https://coveralls.io/github/pouc/ifnotundef?branch=master)A set of helper functions that simplify the (is a undefined ? b : c) syntax
 
 **Author:** Loic Formont  
 **License**: MIT Licensed  
