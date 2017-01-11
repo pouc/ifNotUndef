@@ -10,7 +10,7 @@ var exports = {};
  *
  * @module ifnotundef
  * @typicalname undef
- * @author Loïc Formont
+ * @author Lo&iuml;c Formont
  *
  * @license MIT Licensed
  *
