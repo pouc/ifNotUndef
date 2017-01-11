@@ -4,7 +4,7 @@
   "description": "a set of helper functions that simplify the (is a undefined ? b : c) syntax",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "grunt-shell": "^2.1.0",
     "grunt-simple-mocha": "^0.4.1",
     "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
     "sinon": "^1.17.7",
     "sinon-chai": "^2.8.0"
   }
