@@ -1,6 +1,6 @@
 {
   "name": "ifnotundef",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "a set of helper functions that simplify the (is a undefined ? b : c) syntax",
   "main": "index.js",
   "scripts": {
