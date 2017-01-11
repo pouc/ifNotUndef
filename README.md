@@ -1,7 +1,7 @@
 <a name="module_ifnotundef"></a>
 
 ## ifnotundef
-[![GitHub version](https://badge.fury.io/gh/pouc%2Fifnotundef.svg)](https://badge.fury.io/gh/pouc%2Fifnotundef)[![npm version](https://badge.fury.io/js/ifnotundef.svg)](https://badge.fury.io/js/ifnotundef)[![Build Status](https://travis-ci.org/pouc/ifnotundef.svg?branch=master)](https://travis-ci.org/pouc/ifnotundef)[![Dependency Status](https://gemnasium.com/badges/github.com/pouc/ifnotundef.svg)](https://gemnasium.com/github.com/pouc/ifnotundef)[![Coverage Status](https://coveralls.io/repos/github/pouc/ifnotundef/badge.svg?branch=master)](https://coveralls.io/github/pouc/ifnotundef?branch=master)A set of helper functions that simplify the (is a undefined ? b : c) syntax
+[![GitHub version](https://badge.fury.io/gh/pouc%2Fifnotundef.svg)](https://badge.fury.io/gh/pouc%2Fifnotundef)[![npm version](https://badge.fury.io/js/ifnotundef.svg)](https://badge.fury.io/js/ifnotundef)[![NPM monthly downloads](https://img.shields.io/npm/dm/ifnotundef.svg?style=flat)](https://npmjs.org/package/ifnotundef)[![Build Status](https://travis-ci.org/pouc/ifnotundef.svg?branch=master)](https://travis-ci.org/pouc/ifnotundef)[![Dependency Status](https://gemnasium.com/badges/github.com/pouc/ifnotundef.svg)](https://gemnasium.com/github.com/pouc/ifnotundef)[![Coverage Status](https://coveralls.io/repos/github/pouc/ifnotundef/badge.svg?branch=master)](https://coveralls.io/github/pouc/ifnotundef?branch=master)A set of helper functions that simplify the (is a undefined ? b : c) syntax
 
 **Author:** Lo&iuml;c Formont  
 **License**: MIT Licensed  
