@@ -1,6 +1,6 @@
 {
   "name": "ifnotundef",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "a set of helper functions that simplify the (is a undefined ? b : c) syntax",
   "main": "index.js",
   "scripts": {
@@ -23,7 +23,6 @@
     "grunt": "^1.0.1",
     "grunt-bump": "^0.8.0",
     "grunt-coveralls": "^1.0.1",
-    "grunt-git": "^1.0.3",
     "grunt-jscs": "^3.0.1",
     "grunt-jsdoc-to-markdown": "^2.0.0",
     "grunt-mocha-istanbul": "^5.0.2",

@@ -60,17 +60,7 @@ module.exports = function(grunt) {
             publish: {
                 command: 'npm publish'
             }
-        },
-		gitcommit: {
-			all: {
-				options: {
-					allowEmpty: true
-				},
-				files: {
-					src: ['']
-				}
-			}
-		 }
+        }
     });
 
     grunt.loadNpmTasks('grunt-jsdoc-to-markdown');
@@ -80,7 +70,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-simple-mocha');
     grunt.loadNpmTasks('grunt-mocha-istanbul');
     grunt.loadNpmTasks('grunt-coveralls');
-	grunt.loadNpmTasks('grunt-git');
 
     grunt.registerTask('patch', 'patch', function() {
         grunt.task.run('bump:patch', 'shell:publish');
@@ -91,7 +80,7 @@ module.exports = function(grunt) {
     });
 
     grunt.registerTask('release', 'Release a new version, push it and publish it', function() {
-        grunt.task.run('jscs', 'simplemocha:all', 'mocha_istanbul:coverage', 'jsdoc2md:oneOutputFile', 'gitcommit:all', 'bump:patch', 'shell:publish', 'coveralls:default');
+        grunt.task.run('jscs', 'simplemocha:all', 'mocha_istanbul:coverage', 'jsdoc2md:oneOutputFile', 'bump:patch', 'shell:publish', 'coveralls:default');
     });
 
 };
