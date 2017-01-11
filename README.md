@@ -1,11 +1,10 @@
 <a name="module_ifnotundef"></a>
 
 ## ifnotundef
-[![Build Status](https://travis-ci.org/pouc/ifnotundef.svg?branch=master)](https://travis-ci.org/pouc/ifnotundef)[![Coverage Status](https://coveralls.io/repos/github/pouc/ifnotundef/badge.svg?branch=master)](https://coveralls.io/github/pouc/ifnotundef?branch=master)A set of helper functions that simplify the (is a undefined ? b : c) syntax
+[![Build Status](https://travis-ci.org/pouc/ifnotundef.svg?branch=master)](https://travis-ci.org/pouc/ifnotundef)[![Dependency Status](https://gemnasium.com/badges/github.com/pouc/ifnotundef.svg)](https://gemnasium.com/github.com/pouc/ifnotundef)[![Coverage Status](https://coveralls.io/repos/github/pouc/ifnotundef/badge.svg?branch=master)](https://coveralls.io/github/pouc/ifnotundef?branch=master)A set of helper functions that simplify the (is a undefined ? b : c) syntax
 
-**Author:** Loic Formont  
+**Author:** Lo�c Formont  
 **License**: MIT Licensed  
-**Copyright**: Copyright (C) 2017 Loic Formont  
 **Example**  
 ```javascriptvar undef = require("ifnotundef");```
 

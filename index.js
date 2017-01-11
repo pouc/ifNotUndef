@@ -12,7 +12,6 @@ var exports = {};
  * @typicalname undef
  * @author Loïc Formont
  *
- * @copyright Copyright (C) 2017 Loic Formont
  * @license MIT Licensed
  *
  * @example
