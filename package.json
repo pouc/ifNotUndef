@@ -1,0 +1,19 @@
+{
+  "name": "ifnotundef",
+  "version": "1.0.0",
+  "description": "a set of helper functions that simplify the (is a undefined ? b : c) syntax",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pouc/ifNotUndef.git"
+  },
+  "author": "pouc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pouc/ifNotUndef/issues"
+  },
+  "homepage": "https://github.com/pouc/ifNotUndef#readme"
+}
