@@ -1,6 +1,6 @@
 {
   "name": "ifnotundef",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "a set of helper functions that simplify the (is a undefined ? b : c) syntax",
   "main": "index.js",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pouc/ifNotUndef.git"
+    "url": "git+https://github.com/pouc/ifnotundef.git"
   },
   "author": "pouc",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pouc/ifNotUndef/issues"
+    "url": "https://github.com/pouc/ifnotundef/issues"
   },
-  "homepage": "https://github.com/pouc/ifNotUndef#readme",
+  "homepage": "https://github.com/pouc/ifnotundef#readme",
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
