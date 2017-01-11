@@ -9,7 +9,7 @@ var exports = {};
  *
  * @module ifnotundef
  * @typicalname undef
- * @author Loic Formont
+ * @author Loïc Formont
  *
  * @copyright Copyright (C) 2017 Loic Formont
  * @license MIT Licensed
