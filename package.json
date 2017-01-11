@@ -1,6 +1,6 @@
 {
   "name": "ifnotundef",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a set of helper functions that simplify the (is a undefined ? b : c) syntax",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,21 @@
   "bugs": {
     "url": "https://github.com/pouc/ifNotUndef/issues"
   },
-  "homepage": "https://github.com/pouc/ifNotUndef#readme"
+  "homepage": "https://github.com/pouc/ifNotUndef#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "chai-things": "^0.2.0",
+    "grunt": "^1.0.1",
+    "grunt-bump": "^0.8.0",
+    "grunt-coveralls": "^1.0.1",
+    "grunt-jscs": "^3.0.1",
+    "grunt-jsdoc-to-markdown": "^2.0.0",
+    "grunt-mocha-istanbul": "^5.0.2",
+    "grunt-shell": "^2.1.0",
+    "grunt-simple-mocha": "^0.4.1",
+    "istanbul": "^0.4.5",
+    "sinon": "^1.17.7",
+    "sinon-chai": "^2.8.0"
+  }
 }
