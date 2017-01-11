@@ -72,7 +72,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-coveralls');
 
     grunt.registerTask('patch', 'patch', function() {
-        grunt.task.run('bump:patch', 'shell:publish');
+        grunt.task.run('bump:patch');
     });
 	
 	grunt.registerTask('commit', 'commit', function() {
