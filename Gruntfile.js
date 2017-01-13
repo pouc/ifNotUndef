@@ -38,16 +38,6 @@ module.exports = function(grunt) {
                 }
             }
         },
-        coveralls: {
-            options: {
-                force: false
-            },
-            default: {
-                src: 'coverage/*.info',
-                options: {
-                }
-            }
-        },
         bump: {
             options: {
                 push: true,
@@ -69,7 +59,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-jscs');
     grunt.loadNpmTasks('grunt-simple-mocha');
     grunt.loadNpmTasks('grunt-mocha-istanbul');
-    grunt.loadNpmTasks('grunt-coveralls');
 
     grunt.registerTask('patch', 'patch', function() {
         grunt.task.run('bump:patch');

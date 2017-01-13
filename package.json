@@ -1,6 +1,6 @@
 {
   "name": "ifnotundef",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "description": "a set of helper functions that simplify the (is a undefined ? b : c) syntax",
   "main": "index.js",
   "scripts": {
@@ -20,9 +20,9 @@
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
     "chai-things": "^0.2.0",
+    "coveralls": "^2.11.15",
     "grunt": "^1.0.1",
     "grunt-bump": "^0.8.0",
-    "grunt-coveralls": "^1.0.1",
     "grunt-jscs": "^3.0.1",
     "grunt-jsdoc-to-markdown": "^2.0.0",
     "grunt-mocha-istanbul": "^5.0.2",
@@ -32,5 +32,6 @@
     "mocha": "^3.2.0",
     "sinon": "^1.17.7",
     "sinon-chai": "^2.8.0"
-  }
+  },
+  "dependencies": {}
 }
