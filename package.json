@@ -1,10 +1,10 @@
 {
   "name": "ifnotundef",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "a set of helper functions that simplify the (is a undefined ? b : c) syntax",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha && istanbul cover node_modules/mocha/bin/_mocha"
   },
   "repository": {
     "type": "git",
