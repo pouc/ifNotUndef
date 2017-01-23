@@ -10,6 +10,7 @@
 
 * [ifnotundef](#module_ifnotundef)
     * [.if(a, b, [c])](#module_ifnotundef.if) ⇒ <code>\*</code>
+    * [.try(a, [b])](#module_ifnotundef.try) ⇒ <code>\*</code>
     * [.child(a, b, c, [d])](#module_ifnotundef.child) ⇒ <code>\*</code>
 
 <a name="module_ifnotundef.if"></a>
@@ -28,6 +29,21 @@ Two parameters mode If a is undefined, return b else aThree parameters mode I
 
 **Example**  
 Two ways to use if. Either with two parameters (a||b):```javascriptvar myHost = undef.if(options.host, options.hostname);```or with three parameters (a?b:c):```javascriptvar myHost = undef.if(options.host, options.hostname, 'localhost');```
+<a name="module_ifnotundef.try"></a>
+
+### undef.try(a, [b]) ⇒ <code>\*</code>
+Two parameters mode If a is undefined, throw a else return aThree parameters mode If a is undefined, throw b else return a
+
+**Kind**: static method of <code>[ifnotundef](#module_ifnotundef)</code>  
+**Returns**: <code>\*</code> - a or exception depending on a's undefined status  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| a | <code>\*</code> | the parameter to try |
+| [b] | <code>\*</code> | the error message |
+
+**Example**  
+Two ways to use if. Either with one parameter:```javascriptvar myHost = undef.try(options.host);```or with two parameters:```javascriptvar myUndefined = undef.try(undefined, 'undefined is not defined ... ;-)');// Exeption raised above```
 <a name="module_ifnotundef.child"></a>
 
 ### undef.child(a, b, c, [d]) ⇒ <code>\*</code>

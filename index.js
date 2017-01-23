@@ -82,8 +82,8 @@ exports.if = function(a, b, c) {
 exports.try = function(a, b) {
 
     if (typeof a != 'undefined' && a != null) return a;
-	if (arguments.length == 1) throw new TypeError('undefined');
-	throw new TypeError(b);
+    if (arguments.length == 1) throw new TypeError('undefined');
+    throw new TypeError(b);
 
 };
 
