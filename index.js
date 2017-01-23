@@ -56,6 +56,38 @@ exports.if = function(a, b, c) {
 };
 
 /**
+ * Two parameters mode
+ *  If a is undefined, throw a else return a
+ * Three parameters mode
+ *  If a is undefined, throw b else return a
+ *
+ * @example
+ * Two ways to use if. Either with one parameter:
+ *
+ * ```javascript
+ * var myHost = undef.try(options.host);
+ * ```
+ *
+ * or with two parameters:
+ *
+ * ```javascript
+ * var myUndefined = undef.try(undefined, 'undefined is not defined ... ;-)');
+ * // Exeption raised above
+ * ```
+ *
+ * @param {*} a the parameter to try
+ * @param {*=} b the error message
+ * @returns {*} a or exception depending on a's undefined status
+ */
+exports.try = function(a, b) {
+
+    if (typeof a != 'undefined' && a != null) return a;
+	if (arguments.length == 1) throw new TypeError('undefined');
+	throw new TypeError(b);
+
+};
+
+/**
  * Three parameters mode
  *  If a[b] is undefined, return c else a[b]
  * Four parameters mode

@@ -10,7 +10,7 @@ var should = chai.should();
 
 var exports = require('../index.js');
 
-describe('ifnotundef...', function() {
+describe('if...', function() {
 
 	it('should be defined', function() {
 		expect(exports.if).to.not.be.undefined;
@@ -40,7 +40,33 @@ describe('ifnotundef...', function() {
 
 });
 
-describe('ifChildNotUndef...', function() {
+describe('try...', function() {
+
+	it('should be defined', function() {
+		expect(exports.try).to.not.be.undefined;
+	});
+
+	it('should work with 1 param', function() {
+		expect(exports.try(1)).to.equal(1);
+		expect(exports.try('undefined')).to.equal('undefined');
+
+		expect(() => exports.try(null)).to.throw(TypeError, 'undefined');
+		expect(() => exports.try(undefined)).to.throw(TypeError, 'undefined');
+		expect(() => exports.try(exports.toto)).to.throw(TypeError, 'undefined');
+	});
+
+	it('should work with 2 params', function() {
+		expect(exports.try(1, 'test')).to.equal(1);
+		expect(exports.try('undefined', 'test')).to.equal('undefined');
+
+		expect(() => exports.try(null, 'test')).to.throw(TypeError, 'test');
+		expect(() => exports.try(undefined, 'test')).to.throw(TypeError, 'test');
+		expect(() => exports.try(exports.toto, 'test')).to.throw(TypeError, 'test');
+	});
+
+});
+
+describe('child...', function() {
 
 	it('should be defined', function() {
 		expect(exports.child).to.not.be.undefined;
