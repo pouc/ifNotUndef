@@ -1,6 +1,6 @@
 {
   "name": "ifnotundef",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "a set of helper functions that simplify the (is a undefined ? b : c) syntax",
   "main": "index.js",
   "scripts": {
@@ -33,5 +33,7 @@
     "sinon": "^1.17.7",
     "sinon-chai": "^2.8.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "get-value": "^2.0.6"
+  }
 }

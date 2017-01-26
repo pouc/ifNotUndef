@@ -1,3 +1,5 @@
+var get = require('get-value');
+
 var exports = {};
 
 /**
@@ -50,15 +52,59 @@ module.exports = exports;
 exports.if = function(a, b, c) {
 
     return (arguments.length <= 2) ?
-        ((typeof a != 'undefined' && a != null) ? a : b) :  // 2 arguments mode: return b if a is undefined else return a
-        ((typeof a != 'undefined' && a != null) ? b : c);   // 3 arguments mode: return c if a is undefined else return b
+        (exports.check(a) ? a : b) :  // 2 arguments mode: return b if a is undefined else return a
+        (exports.check(a) ? b : c);   // 3 arguments mode: return c if a is undefined else return b
 
 };
 
 /**
+ * One parameters mode
+ *  If a is undefined, false else true
  * Two parameters mode
+ *  If a[b] is undefined, throw b else return a
+ *
+ * @example
+ *
+ * ```javascript
+ * if(undef.check(options.host)) console.log('Deal with it');
+ * ```
+ *
+ * @param {*} a the variable to check
+ * @param {*} b the child path
+ * @returns {boolean} a or a[b]'s undefined status
+ */
+exports.check = function(a, b) {
+
+    if (arguments.length == 1) {
+
+        return (typeof a != 'undefined' && a != null);
+
+    } else {
+
+        var mb = b;
+
+        if (typeof b === 'undefined') {
+            mb = [];
+        }
+
+        if (!Array.isArray(mb)) {
+            mb = [mb];
+        }
+
+        if (mb.length == 0) {
+            return exports.check(a);
+        } else {
+            return exports.check(a) && exports.check(get(a, mb));
+        }
+
+    }
+
+};
+
+/**
+ * One parameters mode
  *  If a is undefined, throw a else return a
- * Three parameters mode
+ * Two parameters mode
  *  If a is undefined, throw b else return a
  *
  * @example
@@ -81,7 +127,7 @@ exports.if = function(a, b, c) {
  */
 exports.try = function(a, b) {
 
-    if (typeof a != 'undefined' && a != null) return a;
+    if (exports.check(a)) return a;
     if (arguments.length == 1) throw new TypeError('undefined');
     throw new TypeError(b);
 
@@ -124,18 +170,26 @@ exports.child = function(a, b, c, d) {
         mb = [mb];
     }
 
-    if (arguments.length <= 3 && mb.length == 0) {
-        return exports.if(a, c);
-    } else if (arguments.length > 3 && mb.length == 0) {
-        return exports.if(a, c, d);
-    } else if (arguments.length <= 3 && typeof a !== 'undefined' && a != null && a.hasOwnProperty(mb[0])) {
-        return exports.child(a[mb[0]], mb.slice(1), c);
-    } else if (arguments.length > 3 && typeof a !== 'undefined' && a != null && a.hasOwnProperty(mb[0])) {
-        return exports.child(a[mb[0]], mb.slice(1), c, d);
-    } else if (arguments.length <= 3) {
-        return c;
-    } else if (arguments.length > 3) {
-        return d;
+    if (arguments.length <= 3) {
+
+        if (mb.length == 0) {
+            return exports.if(a, c);
+        } else if (exports.check(a, mb)) {
+            return get(a, mb);
+        } else {
+            return c;
+        }
+
+    } else {
+
+        if (mb.length == 0) {
+            return exports.if(a, c, d);
+        } else if (exports.check(a, mb)) {
+            return c;
+        } else {
+            return d;
+        }
+
     }
 
 };
