@@ -1,4 +1,4 @@
-var get = require('get-value');
+var dotProp = require('dot-prop');
 
 var exports = {};
 
@@ -58,15 +58,53 @@ exports.if = function(a, b, c) {
 };
 
 /**
- * One parameters mode
- *  If a is undefined, false else true
- * Two parameters mode
- *  If a[b] is undefined, throw b else return a
+ * Invert of "check"
  *
  * @example
  *
  * ```javascript
- * if(undef.check(options.host)) console.log('Deal with it');
+ * if(undef.is(options.host)) console.log('Deal with it');
+ * ```
+ *
+ * @param {*} a the variable to check
+ * @param {*} b the child path
+ * @returns {boolean} a or a[b]'s undefined status
+ */
+exports.is = function(a, b) {
+
+    return !exports.check(a, b);
+
+};
+
+/**
+ * Alias of "check"
+ *
+ * @example
+ *
+ * ```javascript
+ * if(undef.isnot(options.host)) console.log('Great');
+ * ```
+ *
+ * @param {*} a the variable to check
+ * @param {*} b the child path
+ * @returns {boolean} a or a[b]'s undefined status
+ */
+exports.isnot = function(a, b) {
+
+    return exports.check(a, b);
+
+};
+
+/**
+ * One parameters mode
+ *  If a is undefined, false else true
+ * Two parameters mode
+ *  If a[b] is undefined, false else true
+ *
+ * @example
+ *
+ * ```javascript
+ * if(!undef.check(options.host)) console.log('Deal with it');
  * ```
  *
  * @param {*} a the variable to check
@@ -94,7 +132,7 @@ exports.check = function(a, b) {
         if (mb.length == 0) {
             return exports.check(a);
         } else {
-            return exports.check(a) && exports.check(get(a, mb));
+            return exports.check(a) && exports.check(dotProp.get(a, mb));
         }
 
     }
@@ -127,7 +165,7 @@ exports.check = function(a, b) {
  */
 exports.try = function(a, b) {
 
-    if (exports.check(a)) return a;
+    if (exports.isnot(a)) return a;
     if (arguments.length == 1) throw new TypeError('undefined');
     throw new TypeError(b);
 
@@ -174,8 +212,8 @@ exports.child = function(a, b, c, d) {
 
         if (mb.length == 0) {
             return exports.if(a, c);
-        } else if (exports.check(a, mb)) {
-            return get(a, mb);
+        } else if (!exports.is(a, mb)) {
+            return dotProp.get(a, mb);
         } else {
             return c;
         }
@@ -184,7 +222,7 @@ exports.child = function(a, b, c, d) {
 
         if (mb.length == 0) {
             return exports.if(a, c, d);
-        } else if (exports.check(a, mb)) {
+        } else if (!exports.is(a, mb)) {
             return c;
         } else {
             return d;
