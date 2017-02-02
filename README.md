@@ -10,6 +10,8 @@
 
 * [ifnotundef](#module_ifnotundef)
     * [.if(a, b, [c])](#module_ifnotundef.if) ⇒ <code>\*</code>
+    * [.is(a, b)](#module_ifnotundef.is) ⇒ <code>boolean</code>
+    * [.isnot(a, b)](#module_ifnotundef.isnot) ⇒ <code>boolean</code>
     * [.check(a, b)](#module_ifnotundef.check) ⇒ <code>boolean</code>
     * [.try(a, [b])](#module_ifnotundef.try) ⇒ <code>\*</code>
     * [.child(a, b, c, [d])](#module_ifnotundef.child) ⇒ <code>\*</code>
@@ -30,10 +32,10 @@ Two parameters mode If a is undefined, return b else aThree parameters mode I
 
 **Example**  
 Two ways to use if. Either with two parameters (a||b):```javascriptvar myHost = undef.if(options.host, options.hostname);```or with three parameters (a?b:c):```javascriptvar myHost = undef.if(options.host, options.hostname, 'localhost');```
-<a name="module_ifnotundef.check"></a>
+<a name="module_ifnotundef.is"></a>
 
-### undef.check(a, b) ⇒ <code>boolean</code>
-One parameters mode If a is undefined, false else trueTwo parameters mode If a[b] is undefined, throw b else return a
+### undef.is(a, b) ⇒ <code>boolean</code>
+Invert of "check"
 
 **Kind**: static method of <code>[ifnotundef](#module_ifnotundef)</code>  
 **Returns**: <code>boolean</code> - a or a[b]'s undefined status  
@@ -44,7 +46,37 @@ One parameters mode If a is undefined, false else trueTwo parameters mode If 
 | b | <code>\*</code> | the child path |
 
 **Example**  
-```javascriptif(undef.check(options.host)) console.log('Deal with it');```
+```javascriptif(undef.is(options.host)) console.log('Deal with it');```
+<a name="module_ifnotundef.isnot"></a>
+
+### undef.isnot(a, b) ⇒ <code>boolean</code>
+Alias of "check"
+
+**Kind**: static method of <code>[ifnotundef](#module_ifnotundef)</code>  
+**Returns**: <code>boolean</code> - a or a[b]'s undefined status  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| a | <code>\*</code> | the variable to check |
+| b | <code>\*</code> | the child path |
+
+**Example**  
+```javascriptif(undef.isnot(options.host)) console.log('Great');```
+<a name="module_ifnotundef.check"></a>
+
+### undef.check(a, b) ⇒ <code>boolean</code>
+One parameters mode If a is undefined, false else trueTwo parameters mode If a[b] is undefined, false else true
+
+**Kind**: static method of <code>[ifnotundef](#module_ifnotundef)</code>  
+**Returns**: <code>boolean</code> - a or a[b]'s undefined status  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| a | <code>\*</code> | the variable to check |
+| b | <code>\*</code> | the child path |
+
+**Example**  
+```javascriptif(!undef.check(options.host)) console.log('Deal with it');```
 <a name="module_ifnotundef.try"></a>
 
 ### undef.try(a, [b]) ⇒ <code>\*</code>
