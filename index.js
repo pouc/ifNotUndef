@@ -1,4 +1,4 @@
-var dotProp = require('dot-prop');
+var path = require('object-path');
 
 var exports = {};
 
@@ -119,21 +119,7 @@ exports.check = function(a, b) {
 
     } else {
 
-        var mb = b;
-
-        if (typeof b === 'undefined') {
-            mb = [];
-        }
-
-        if (!Array.isArray(mb)) {
-            mb = [mb];
-        }
-
-        if (mb.length == 0) {
-            return exports.check(a);
-        } else {
-            return exports.check(a) && exports.check(dotProp.get(a, mb));
-        }
+        return exports.check(path.get(a, b));
 
     }
 
@@ -198,35 +184,13 @@ exports.try = function(a, b) {
  */
 exports.child = function(a, b, c, d) {
 
-    var mb = b;
-
-    if (typeof b === 'undefined') {
-        mb = [];
-    }
-
-    if (!Array.isArray(mb)) {
-        mb = [mb];
-    }
-
     if (arguments.length <= 3) {
 
-        if (mb.length == 0) {
-            return exports.if(a, c);
-        } else if (!exports.is(a, mb)) {
-            return dotProp.get(a, mb);
-        } else {
-            return c;
-        }
+        return exports.if(path.get(a, b), c);
 
     } else {
 
-        if (mb.length == 0) {
-            return exports.if(a, c, d);
-        } else if (!exports.is(a, mb)) {
-            return c;
-        } else {
-            return d;
-        }
+        return exports.if(path.get(a, b), c, d);
 
     }
 
